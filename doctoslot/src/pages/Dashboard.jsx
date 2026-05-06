@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import './Dashboard.css';
 
 function Dashboard() {
   const [selectedPatientId, setSelectedPatientId] = useState(1);
