@@ -1,13 +1,20 @@
 import React from 'react';
 
 function ConsultationDetails({ patient }) {
-  if (!patient) return <div className="consultation-details">Select a patient</div>;
+  if (!patient) return <div>Please select a patient.</div>;
+
   return (
     <div className="consultation-details">
-      <h3>Consultation Details</h3>
-      <p><strong>Name:</strong> {patient.name}</p>
-      <p><strong>Time:</strong> {patient.time}</p>
-      <p><strong>Status:</strong> {patient.status}</p>
+      <h3>Consultation</h3>
+      <div className="details-card">
+        <h2>{patient.name}</h2>
+        <p>Scheduled Time: {patient.time}</p>
+        <p>Visit Type: {patient.status}</p>
+        <div className="medical-notes">
+          <h4>Observations</h4>
+          <p>High fever and cough...</p>
+        </div>
+      </div>
     </div>
   );
 }
