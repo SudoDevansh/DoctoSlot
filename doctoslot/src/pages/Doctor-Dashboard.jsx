@@ -1,14 +1,15 @@
+
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import './Dashboard.css';
-import TopNavigation from '../components/TopNavigation.jsx';
-import HeroSection from '../components/HeroSection.jsx';
-import PatientList from '../components/PatientList.jsx';
-import ConsultationDetails from '../components/ConsultationDetails.jsx';
-import RightSidebar from '../components/RightSidebar.jsx';
+import './Doctor-Dashboard.css';
+import TopNavigation from '../components/Doctor_Dashboard/TopNavigation';
+import HeroSection from '../components/Doctor_Dashboard/HeroSection';
+import PatientList from '../components/Doctor_Dashboard/PatientList';
+import ConsultationDetails from '../components/Doctor_Dashboard/ConsultationDetails';
+import RightSidebar from '../components/Doctor_Dashboard/RightSidebar';
 
 
-function Dashboard() {
+function DoctorDashboard() {
   const [selectedPatientId, setSelectedPatientId] = useState(1);
 
   const patients = [
@@ -20,8 +21,10 @@ function Dashboard() {
   const activePatient = patients.find(p => p.id === selectedPatientId);
 
   return (
-    <div className="dashboard-container">
+    <div className="doctor-dashboard-container">
+      
       <TopNavigation />
+      
       <div className="main-content">
         <div className="left-column">
           <HeroSection />
@@ -44,4 +47,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default DoctorDashboard;

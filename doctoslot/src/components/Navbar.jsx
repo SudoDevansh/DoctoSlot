@@ -4,12 +4,12 @@ function Navbar(){
     return(
         <header className="navbar">
             <div className="navbar-container">
-                <Link to="/" className="ogo">
+                <Link to="/home" className="ogo">
                 DoctoSlot
                 </Link>
  <nav className="nav-links">
 
-          <NavLink to="/" className="nav-link">
+          <NavLink to="/home" className="nav-link">
 
             Home
 
@@ -42,12 +42,6 @@ function Navbar(){
             Book Now
 
           </button>
-
-          <Link to="/dashboard" className="dashboard-icon">
-
-            <span className="material-symbols-outlined">account_circle</span>
-
-          </Link>
 
         </div>
 

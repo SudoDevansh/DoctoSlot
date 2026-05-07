@@ -1,118 +1,95 @@
-/* ===== Neha - Services Page CSS ===== */
+/* Services page styles */
 
 .services-page {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 48px 24px 64px;
-  font-family: "Inter", system-ui, sans-serif;
-  background: var(--background, #F9F9FF);
-  color: var(--text-main, #121C2C);
+  padding: 96px 24px 56px;
+  background: var(--background);
+  color: var(--text-main);
 }
 
-/* ----- Header ----- */
 .services-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
 }
 
-.services-title {
-  font-family: "Manrope", system-ui, sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--primary-dark, #1E3A5F);
-  margin: 0 0 16px;
-  line-height: 1.2;
+.services-header h1 {
+  font-size: 36px;
+  color: var(--primary-dark);
+  margin: 0 0 12px;
 }
 
-.services-subtitle {
-  font-size: 16px;
-  line-height: 1.7;
-  color: var(--text-muted, #43474F);
-  max-width: 720px;
+.services-header p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-/* ----- Grid ----- */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 22px;
 }
 
-/* ----- Card ----- */
-.services-card {
-  background: var(--surface, #FFFFFF);
-  border: 1px solid var(--border, #D9E3F9);
-  border-radius: 16px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow);
 }
 
-.services-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(44, 82, 130, 0.08);
-}
-
-.services-card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: var(--primary-light, #D4E3FF);
-  color: var(--primary, #2C5282);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 28px;
-}
-
-.services-card-title {
-  font-family: "Manrope", system-ui, sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--text-main, #121C2C);
+.service-card h2 {
+  font-size: 21px;
+  color: var(--text-main);
   margin: 0 0 12px;
-  line-height: 1.3;
 }
 
-.services-card-description {
-  font-size: 15px;
+.service-card p {
+  color: var(--text-muted);
   line-height: 1.6;
-  color: var(--text-muted, #43474F);
-  margin: 0 0 28px;
-  flex: 1;
+  margin: 0 0 20px;
 }
 
-.services-card-button {
+.service-button {
   display: inline-block;
-  text-align: center;
-  background: var(--primary-dark, #1E3A5F);
-  color: #FFFFFF;
-  padding: 14px 20px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s ease;
+  background: var(--primary);
+  color: white;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 14px;
 }
 
-.services-card-button:hover {
-  background: var(--primary, #2C5282);
+.service-button:hover {
+  background: var(--primary-dark);
 }
 
-/* ----- Responsive ----- */
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .services-header h1 {
+    font-size: 32px;
+  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
+  .services-page {
+    padding: 88px 18px 48px;
+  }
+
   .services-grid {
     grid-template-columns: 1fr;
   }
-  .services-title {
+
+  .service-card {
+    padding: 22px;
+  }
+
+  .services-header h1 {
     font-size: 30px;
   }
 }

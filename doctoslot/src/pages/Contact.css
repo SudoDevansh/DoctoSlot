@@ -1,267 +1,179 @@
-/* ===== Neha - Contact Page CSS ===== */
+/* Contact page styles */
 
 .contact-page {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 40px 24px 64px;
-  font-family: "Inter", system-ui, sans-serif;
-  background: var(--background, #F9F9FF);
-  color: var(--text-main, #121C2C);
+  padding: 96px 24px 56px;
+  background: var(--background);
+  color: var(--text-main);
 }
 
-/* ----- Header ----- */
 .contact-header {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
-.contact-title {
-  font-family: "Manrope", system-ui, sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--text-main, #121C2C);
+.contact-header h1 {
+  font-size: 36px;
+  color: var(--primary-dark);
+  margin: 0 0 10px;
+}
+
+.contact-header p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.contact-card,
+.map-section,
+.emergency-note {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  box-shadow: var(--shadow);
+}
+
+.contact-card h2,
+.map-section h2,
+.emergency-note h2 {
+  font-size: 22px;
+  color: var(--primary-dark);
+  margin: 0 0 16px;
+}
+
+.doctor-name {
+  color: var(--text-muted);
+  margin: 0 0 20px;
+}
+
+.contact-details p {
+  color: var(--text-muted);
+  line-height: 1.6;
   margin: 0 0 12px;
 }
 
-.contact-subtitle {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text-muted, #43474F);
-  margin: 0;
-  max-width: 720px;
+.contact-details strong {
+  color: var(--text-main);
 }
 
-/* ----- Grid ----- */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: 24px;
-  align-items: start;
-}
-
-.contact-left,
-.contact-right {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* ----- Info card ----- */
-.contact-info-card {
-  background: var(--surface, #FFFFFF);
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 2px 8px rgba(44, 82, 130, 0.06);
-}
-
-.contact-clinic-name {
-  font-family: "Manrope", system-ui, sans-serif;
-  font-size: 24px;
+.whatsapp-button {
+  display: inline-block;
+  background: var(--whatsapp);
+  color: white;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
   font-weight: 700;
-  color: var(--primary-dark, #1E3A5F);
-  margin: 0 0 4px;
+  margin-top: 10px;
 }
 
-.contact-doctor-name {
-  font-size: 15px;
-  color: var(--text-muted, #43474F);
-  margin: 0 0 24px;
-}
-
-.contact-info-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.contact-info-item {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  color: var(--primary, #2C5282);
-}
-
-.contact-info-item strong {
-  display: block;
-  font-weight: 700;
-  color: var(--text-main, #121C2C);
-  margin-bottom: 2px;
-  font-size: 15px;
-}
-
-.contact-info-item p {
-  margin: 0;
-  font-size: 14px;
-  color: var(--text-muted, #43474F);
-  line-height: 1.5;
-}
-
-/* ----- WhatsApp button ----- */
-.contact-whatsapp-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  background: var(--whatsapp, #25D366);
-  color: #FFFFFF;
-  text-decoration: none;
-  padding: 14px 20px;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  border-top: 1px solid var(--border, #D9E3F9);
-  margin-top: 20px;
-  padding-top: 14px;
-  transition: background 0.2s ease;
-}
-
-.contact-whatsapp-button {
-  margin-top: 20px;
-}
-
-.contact-whatsapp-button:hover {
-  background: #1FBE5C;
-}
-
-/* ----- Emergency note ----- */
-.contact-emergency {
-  background: #FEE2E2;
-  border-radius: 12px;
-  padding: 18px 20px;
-  display: flex;
-  gap: 12px;
-  color: var(--danger, #DC2626);
-}
-
-.contact-emergency strong {
-  display: block;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.contact-emergency p {
-  margin: 0;
-  font-size: 14px;
-  color: var(--text-main, #121C2C);
-  line-height: 1.5;
-}
-
-/* ----- Map ----- */
-.contact-map {
-  background: var(--surface, #FFFFFF);
-  border-radius: 16px;
-  overflow: hidden;
-  height: 320px;
-  box-shadow: 0 2px 8px rgba(44, 82, 130, 0.06);
-}
-
-.contact-map iframe {
-  display: block;
-}
-
-/* ----- Form card ----- */
-.contact-form-card {
-  background: var(--surface, #FFFFFF);
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: 0 2px 8px rgba(44, 82, 130, 0.06);
-}
-
-.contact-form-title {
-  font-family: "Manrope", system-ui, sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--text-main, #121C2C);
-  margin: 0 0 24px;
+.whatsapp-button:hover {
+  background: #1fbe5c;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-}
-
-.contact-form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
-.contact-form-field {
+.form-field {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.contact-form-field label {
+.form-field label {
   font-size: 14px;
-  font-weight: 700;
-  color: var(--text-main, #121C2C);
+  font-weight: 600;
+  color: var(--text-main);
 }
 
-.contact-form-field input,
-.contact-form-field textarea {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 15px;
+.form-field input,
+.form-field textarea {
+  width: 100%;
   padding: 12px 14px;
-  border: 1px solid var(--border, #D9E3F9);
-  border-radius: 10px;
-  background: var(--surface, #FFFFFF);
-  color: var(--text-main, #121C2C);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  color: var(--text-main);
+  background: white;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--primary);
+}
+
+.form-field textarea {
   resize: vertical;
 }
 
-.contact-form-field input::placeholder,
-.contact-form-field textarea::placeholder {
-  color: var(--text-light, #64748B);
-}
-
-.contact-form-field input:focus,
-.contact-form-field textarea:focus {
-  border-color: var(--primary, #2C5282);
-  box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.12);
-}
-
-.contact-form-button {
+.contact-button {
   align-self: flex-start;
-  background: var(--primary-dark, #1E3A5F);
-  color: #FFFFFF;
+  background: var(--primary);
+  color: white;
   border: none;
-  padding: 12px 24px;
-  border-radius: 10px;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  margin-top: 4px;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
 }
 
-.contact-form-button:hover {
-  background: var(--primary, #2C5282);
+.contact-button:hover {
+  background: var(--primary-dark);
 }
 
-/* ----- Responsive ----- */
-@media (max-width: 960px) {
+.map-section {
+  margin-bottom: 28px;
+}
+
+.map-section iframe {
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.emergency-note {
+  background: #fee2e2;
+  border-color: #fecaca;
+}
+
+.emergency-note h2 {
+  color: var(--danger);
+}
+
+.emergency-note p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+@media (max-width: 800px) {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-  .contact-title {
+
+  .contact-header h1 {
     font-size: 30px;
   }
 }
 
-@media (max-width: 540px) {
-  .contact-form-row {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .contact-page {
+    padding: 88px 18px 48px;
   }
-  .contact-info-card,
-  .contact-form-card {
-    padding: 20px;
+
+  .contact-card,
+  .map-section,
+  .emergency-note {
+    padding: 22px;
   }
 }
