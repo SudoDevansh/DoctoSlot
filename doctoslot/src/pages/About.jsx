@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/About.css";
+import "./About.css";
 const doctor = {
   name: "Dr. Aarav Sharma",
   specialty: "General Physician",

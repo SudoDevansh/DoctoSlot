@@ -1,6 +1,6 @@
 import ServiceCard from "../components/ServiceCard.jsx";
 import { useState } from "react";
-import "../styles/Services.css";
+import "./Services.css";
 
 const StethoscopeIcon = (
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

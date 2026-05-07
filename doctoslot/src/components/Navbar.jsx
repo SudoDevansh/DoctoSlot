@@ -1,6 +1,6 @@
 import { NavLink ,Link,useNavigate} from "react-router-dom";
 function Navbar(){
-    const naviagate=useNavigate()
+    const navigate = useNavigate();
     return(
         <header className="navbar">
             <div className="navbar-container">
@@ -37,7 +37,7 @@ function Navbar(){
 
         <div className="nav-actions">
 
-          <button className="nav-book-btn" onClick={() => navigate("/book")}>
+          <button className="nav-book-btn" onClick={() => navigate("/BookAppointment")}>
 
             Book Now
 

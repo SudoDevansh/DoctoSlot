@@ -11,14 +11,17 @@ import Contact from "./pages/Contact.jsx";
 function App() {
   return (<>
   <Navbar/>
+  <div style={{marginTop: "30px",padding:"20px"}}>
+
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
-      <Route path="/book" element={<BookAppointment />} />
+      <Route path="/BookAppointment" element={<BookAppointment />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
+    </div>
     <Footer/>
     </>
   );

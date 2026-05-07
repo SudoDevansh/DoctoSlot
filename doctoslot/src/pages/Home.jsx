@@ -1,8 +1,43 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import "./Home.css";
 
 function Home() {
+  const location = useLocation();
+  const [queueState, setQueueState] = useState({
+    currentToken: "",
+    patientName: "-",
+    availableSlots: "5",
+    averageWait: "15 min"
+  });
+  const [newBooking, setNewBooking] = useState(null);
+
+  useEffect(() => {
+    if (location.state && location.state.newPatient) {
+      const patient = location.state.newPatient;
+      setNewBooking(patient);
+      setQueueState({
+        currentToken: "09",
+        patientName: patient.name || "New Patient",
+        availableSlots: 4,
+        averageWait: "15 min"
+      });
+      // Clear state so refresh doesn't trigger again
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
+
   return (
     <main className="home-page">
+      {newBooking && (
+        <div className="success-banner fade-in" style={{
+          background: "#dcfce7", color: "var(--success)", padding: "16px",
+          textAlign: "center", borderRadius: "8px", margin: "0 24px 24px",
+          fontWeight: "600", border: "1px solid #bbf7d0"
+        }}>
+          Appointment Confirmed for {newBooking.name}. Please check your email and WhatsApp for details!
+        </div>
+      )}
       <section className="hero-section">
         <div className="hero-content">
           <h1>Book Your Doctor Appointment Without Waiting in Long Queues</h1>
@@ -14,7 +49,7 @@ function Home() {
           </p>
 
           <div className="hero-buttons">
-            <Link to="/book" className="btn btn-primary">
+            <Link to="/BookAppointment" className="btn btn-primary">
               Book Appointment
               <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
@@ -44,22 +79,22 @@ function Home() {
 
             <div className="queue-row">
               <span>Current Token</span>
-              <strong>#08</strong>
+              <strong>#{queueState.currentToken}</strong>
             </div>
 
             <div className="queue-row">
-              <span>Next Patient</span>
-              <strong>Rahul Verma</strong>
+              <span>Patient Name</span>
+              <strong>{queueState.patientName}</strong>
             </div>
 
             <div className="queue-row">
               <span>Available Slots</span>
-              <strong>5</strong>
+              <strong>{queueState.availableSlots}</strong>
             </div>
 
             <div className="queue-row">
               <span>Average Wait</span>
-              <strong>12 min</strong>
+              <strong>{queueState.averageWait}</strong>
             </div>
           </div>
         </div>

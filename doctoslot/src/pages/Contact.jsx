@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/Contact.css";
+import "./Contact.css";
  
 const clinic = {
   name: "Sharma Family Clinic",
