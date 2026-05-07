@@ -72,6 +72,7 @@
   height: 100%;
   width: 100%;
   min-height: 380px;
+  border-radius: 10px;
 }
 
 .login-card:hover {
@@ -96,15 +97,17 @@
 .patient-card .login-icon {
   background: #eaf3ff;
   color: var(--primary);
+  border-radius: 10px;
 }
 
 .doctor-card .login-icon {
   background: #ebfbf1;
   color: var(--secondary);
+  border-radius: 10px;
 }
 
 .doctor-card .login-icon span {
-  font-size: 48px; /* Visually match the person icon size */
+  font-size: 48px;
 }
 
 .login-card h2 {
@@ -133,13 +136,13 @@
 }
 
 .btn-secondary {
-  background: var(--secondary);
+  background: var(--accent);
   color: white;
   box-shadow: var(--shadow-md);
 }
 
 .btn-secondary:hover {
-  background: #005a30;
+  background: var(--accent);
 }
 
 .fade-in-up {
